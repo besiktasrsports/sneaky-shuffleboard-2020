@@ -16,7 +16,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.sensors.Gyro;
+import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.utils.NetworkTables;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -32,9 +34,11 @@ public class Robot extends TimedRobot {
  
 
 
-
+  public static Constants m_constants = new Constants();
+  public static DriveTrain m_drivetrain = new DriveTrain();
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static Gyro m_gyro = new Gyro();
+  public static NetworkTables m_NT = new NetworkTables();
   public static OI m_oi;
   
 

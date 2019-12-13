@@ -8,6 +8,7 @@
 package frc.robot.utils;
 
 import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 /**
@@ -15,10 +16,28 @@ import edu.wpi.first.networktables.NetworkTableInstance;
  */
 public class NetworkTables {
 
-        NetworkTableInstance inst = NetworkTableInstance.getDefault();
-        NetworkTable table = inst.getTable("datatable");
+    NetworkTableInstance inst = NetworkTableInstance.getDefault();
+    NetworkTable table = inst.getTable("datatable");
+
+    public static NetworkTableEntry kP;
+    public static NetworkTableEntry kI;
+    public static NetworkTableEntry kD;
+    public static NetworkTableEntry kF;
 
     public NetworkTables(){
+
+        kP = table.getEntry("kP");
+        kI = table.getEntry("kI");
+        kD = table.getEntry("kD");
+        kF = table.getEntry("kF");
+
+        kP.setDouble(0.0);
+        kI.setDouble(0.0);
+        kD.setDouble(0.0);
+        kF.setDouble(0.0);
+
+        
+        
 
 
 
